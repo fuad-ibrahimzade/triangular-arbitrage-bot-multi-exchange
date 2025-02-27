@@ -25,6 +25,8 @@ start_time = time.time()
 # Load API keys from config.env file
 load_dotenv('config.env')
 
+# pip install --force-reinstall -v "python-telegram-bot==21.7"
+
 binance_api_key = os.environ.get('binance_api_key')
 binance_api_secret = os.environ.get('binance_api_secret')
 
