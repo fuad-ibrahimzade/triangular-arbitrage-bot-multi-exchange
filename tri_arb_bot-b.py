@@ -441,14 +441,16 @@ async def find_triangular_arbitrage_opportunities(exchange, markets, tickers, ex
 async def main():
     
     # Get user input on USDT initial amount
-    while True:
-        initial_amount_input = input("How many USDT do you want to trade? | Only numbers are accepted (in the form 1, 10, 20.1) \nUSDT amount:  ")
-        try:
-            # Try to convert the input to a Decimal
-            initial_amount = Decimal(initial_amount_input)
-            break  # If the conversion succeeds, break out of the loop
-        except InvalidOperation:
-            print("Please enter a valid number.")
+    # while True:
+    #     initial_amount_input = input("How many USDT do you want to trade? | Only numbers are accepted (in the form 1, 10, 20.1) \nUSDT amount:  ")
+    #     try:
+    #         # Try to convert the input to a Decimal
+    #         initial_amount = Decimal(initial_amount_input)
+    #         break  # If the conversion succeeds, break out of the loop
+    #     except InvalidOperation:
+    #         print("Please enter a valid number.")
+    
+    initial_amount = 100
     
     # Set up the updater and dispatcher
     # updater = Updater(bot_token)
