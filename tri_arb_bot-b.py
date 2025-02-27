@@ -214,7 +214,8 @@ async def find_triangular_arbitrage_opportunities(exchange, markets, tickers, ex
     # Read existing trades from CSV file
     csv_file = 'tri_arb_opportunities.csv'
     
-    if os.path.exists(csv_file) and os.path.getsize(csv_file) > 0:
+    # if os.path.exists(csv_file) and os.path.getsize(csv_file) > 0:
+    if os.path.exists(csv_file) and ((os.name == 'nt' and os.stat(csv_file).st_size > 2) or (os.name != 'nt' and os.path.getsize(csv_file) > 0)):
         df = pd.read_csv(csv_file)
         tri_arb_opportunities = df.to_dict('records')
     else:
